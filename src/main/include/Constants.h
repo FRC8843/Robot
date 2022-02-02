@@ -4,12 +4,24 @@
 
 #pragma once
 
-/**
- * The Constants header provides a convenient place for teams to hold robot-wide
- * numerical or boolean constants.  This should not be used for any other
- * purpose.
- *
- * It is generally a good idea to place constants into subsystem- or
- * command-specific namespaces within this header, which can then be used where
- * they are needed.
- */
+///////////////////////////////////////////////
+//             Spark Max ID's                //
+//                                           //
+const short LEFT_LEADING_MOTOR_ID = 11;      //
+const short LEFT_FOLLOWING_MOTOR_ID = 12;    //
+const short RIGHT_LEADING_MOTOR_ID = 21;     //
+const short RIGHT_FOLLOWING_MOTOR_ID = 22;   //
+//                                           //
+//                                           //
+///////////////////////////////////////////////
+
+
+///////////////////////////////////////////////
+//            Robot Controllers              //
+//                                           //
+const short XBOX_CONTROLLER_POSITION = 0;    //
+//                                           //
+//                                           //
+///////////////////////////////////////////////
+
+
