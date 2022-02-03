@@ -19,9 +19,24 @@ const short RIGHT_FOLLOWING_MOTOR_ID = 22;   //
 ///////////////////////////////////////////////
 //            Robot Controllers              //
 //                                           //
-const short XBOX_CONTROLLER_POSITION = 0;    //
+const short XBOX_CONTROLLER_PORT = 0;    //
 //                                           //
 //                                           //
 ///////////////////////////////////////////////
 
 
+///////////////////////////////////////////////
+//            Driving Thresolds              //
+//                                           //
+const double FIRST_SPEED_THRESHOLD = 0.25;   //
+const double SECOND_SPEED_THRESHOLD = 0.5;   //
+const double THIRD_SPEED_THRESHOLD = 0.75;   //
+const double FOURTH_SPEED_THRESHOLD = 1  ;   //
+//                                           //
+const double FIRST_ROTATION_THRESHOLD = 0.25;//
+const double SECOND_ROTATION_THRESHOLD = 0.5;//
+const double THIRD_ROTATION_THRESHOLD = 0.75;//
+const double FOURTH_ROTATION_THRESHOLD = 1  ;//
+//                                           //
+//                                           //
+///////////////////////////////////////////////
