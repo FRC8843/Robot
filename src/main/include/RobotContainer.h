@@ -7,7 +7,8 @@
 #include <frc2/command/Command.h>
 #include "subsystems/DriveTrain.h"
 #include "commands/Drive.h"
-
+#include "subsystems/ExampleSubsystem.h"
+#include "commands/ExampleCommand.h"
 /**
  * This class is where the bulk of the robot should be declared.  Since
  * Command-based is a "declarative" paradigm, very little robot logic should
@@ -23,8 +24,8 @@ class RobotContainer {
 
  private:
 
-  DriveTrain *m_subsystem;
-  Drive m_autonomousCommand;
+  ExampleSubsystem  m_subsystem;
+  ExampleCommand  m_autonomousCommand;
 
   void ConfigureButtonBindings();
 };
