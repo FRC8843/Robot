@@ -7,14 +7,7 @@ void Robot::RobotInit() {
   m_container = RobotContainer();
 } 
 
-/**
- * This function is called every robot packet, no matter the mode. Use
- * this for items like diagnostics that you want to run during disabled,
- * autonomous, teleoperated and test.
- *
- * <p> This runs after the mode specific periodic functions, but before
- * LiveWindow and SmartDashboard integrated updating.
- */
+
 void Robot::RobotPeriodic() {
   frc2::CommandScheduler::GetInstance().Run();
 }
@@ -35,12 +28,13 @@ void Robot::AutonomousInit() {
 
 void Robot::AutonomousPeriodic() {}
 
-void Robot::TeleopInit() {
-  if (m_autonomousCommand != nullptr) {
-    m_autonomousCommand->Cancel();
-    m_autonomousCommand = nullptr;
-  }
+void Robot::TeleopInit() 
+{
+  m_teleopCommand = m_container.GetAutonomousCommand();
+  if(m_teleopCommand != nullptr)
+    m_teleopCommand->Schedule();
 }
+
 
 
 void Robot::TeleopPeriodic() 
