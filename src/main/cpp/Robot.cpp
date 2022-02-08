@@ -4,8 +4,8 @@
 #include <frc2/command/CommandScheduler.h>
 
 void Robot::RobotInit() {
-
-}
+  m_container = RobotContainer();
+} 
 
 /**
  * This function is called every robot packet, no matter the mode. Use
@@ -26,28 +26,33 @@ void Robot::DisabledPeriodic() {}
 
 
 void Robot::AutonomousInit() {
-  // m_autonomousCommand = m_container.GetAutonomousCommand();
+  m_autonomousCommand = m_container.GetAutonomousCommand();
 
-  // if (m_autonomousCommand != nullptr) {
-  //   m_autonomousCommand->Schedule();
-  // }
+  if (m_autonomousCommand != nullptr) {
+    m_autonomousCommand->Schedule();
+  }
 }
 
 void Robot::AutonomousPeriodic() {}
 
 void Robot::TeleopInit() {
-
-  // if (m_autonomousCommand != nullptr) {
-  //   m_autonomousCommand->Cancel();
-  //   m_autonomousCommand = nullptr;
-  // }
+  if (m_autonomousCommand != nullptr) {
+    m_autonomousCommand->Cancel();
+    m_autonomousCommand = nullptr;
+  }
 }
 
 
-void Robot::TeleopPeriodic() {}
+void Robot::TeleopPeriodic() 
+{
+  
+}
 
 
-void Robot::TestPeriodic() {}
+void Robot::TestPeriodic() 
+{
+
+}
 
 #ifndef RUNNING_FRC_TESTS
 int main() {

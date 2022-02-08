@@ -30,7 +30,7 @@ void DriveTrain::setRotation(double rotation)
     m_rotationThreshold = rotation;
 }
 
-void DriveTrain::Periodic() 
+void DriveTrain::Drive() 
 {
     if (m_speed > m_speedThreshold)
         setSpeed(m_speedThreshold);

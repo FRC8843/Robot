@@ -24,8 +24,11 @@ class RobotContainer {
 
  private:
 
-  ExampleSubsystem  m_subsystem;
-  ExampleCommand  m_autonomousCommand;
+  //ExampleSubsystem  m_subsystem;
+  //ExampleCommand  m_autonomousCommand;
+  DriveTrain m_driveSubsystem = DriveTrain();
+  Drive m_driveCommand;
+
 
   void ConfigureButtonBindings();
 };

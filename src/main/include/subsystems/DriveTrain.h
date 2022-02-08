@@ -12,11 +12,12 @@
 
 using namespace rev;
 using namespace frc;
+
 class DriveTrain : public frc2::SubsystemBase
 {
     public:
         DriveTrain();
-        void Periodic() override;
+        void Drive();
         void setSpeedThreshold(double);
         void setRotationThreshold(double);
         void setRotation(double);

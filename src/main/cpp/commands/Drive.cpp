@@ -12,6 +12,7 @@ Drive::Drive()
 }
 
 
+
 void Drive::Initialize() 
 {
   m_train->setRotationThreshold(FIRST_ROTATION_THRESHOLD);
@@ -55,18 +56,7 @@ void Drive::Execute()
     m_train->setSpeed(m_controller->GetRightTriggerAxis() - m_controller->GetLeftTriggerAxis());
     m_train->setRotation(m_controller->GetRightX());
 
-    m_train->Periodic(); 
-    //not sure if it is needed here or it is already nested in another place
-
-    
+    m_train->Drive(); 
 }
 
-void Drive::End(bool interrupted) 
-{
-  Initialize();
-}
 
-bool Drive::IsFinished() 
-{
-  return m_controller->GetStartButtonReleased();
-}

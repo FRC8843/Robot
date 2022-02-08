@@ -15,15 +15,11 @@ class Drive
     : public frc2::CommandHelper<frc2::CommandBase, Drive> {
  public:
 
-    Drive();
+    explicit Drive(DriveTrain* driveSubsystem);
 
     void Initialize() override;
 
     void Execute() override;
-
-    void End(bool interrupted) override;
-
-    bool IsFinished() override;
 
   private:
 
