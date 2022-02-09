@@ -3,19 +3,22 @@
 // the WPILib BSD license file in the root directory of this project.
 // צריך יותר סדר פה מארק
 #include "RobotContainer.h"
+#include<iostream>
 
-RobotContainer::RobotContainer() : m_driveCommand(&m_driveSubsystem) 
+RobotContainer::RobotContainer()
 {
+  std::cout << "container constructor called " << std::endl;
+  m_driveSubsystem = new DriveTrain();
+  m_driveCommand = new Drive(m_driveSubsystem);
   ConfigureButtonBindings();
 }
 
 void RobotContainer::ConfigureButtonBindings() {
 
 }
-
 frc2::Command* RobotContainer::GetTeleopCommand()
 {
-  return &m_driveCommand;
+  return m_driveCommand;
 }
 
 frc2::Command* RobotContainer::GetAutonomousCommand() {

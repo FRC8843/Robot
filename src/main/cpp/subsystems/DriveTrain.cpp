@@ -1,7 +1,9 @@
 #include "subsystems/DriveTrain.h"
+#include <iostream>
 // my update
 DriveTrain::DriveTrain() 
 {   
+   
     m_leftLeadingMotor = new CANSparkMax(LEFT_LEADING_MOTOR_ID, CANSparkMax::MotorType::kBrushed);
     m_leftFollowingMotor = new CANSparkMax(LEFT_FOLLOWING_MOTOR_ID, CANSparkMax::MotorType::kBrushed);
     m_rightFollowingMotor = new CANSparkMax(RIGHT_FOLLOWING_MOTOR_ID, CANSparkMax::MotorType::kBrushed);

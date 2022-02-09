@@ -15,7 +15,7 @@ class Drive
     : public frc2::CommandHelper<frc2::CommandBase, Drive> {
  public:
 
-    explicit Drive(DriveTrain* driveSubsystem);
+    Drive(DriveTrain* driveSubsystem);
 
     void Initialize() override;
 
