@@ -30,7 +30,7 @@ void Robot::AutonomousPeriodic() {}
 
 void Robot::TeleopInit() 
 {
-  m_teleopCommand = m_container.GetAutonomousCommand();
+  m_teleopCommand = m_container.GetTeleopCommand();
   if(m_teleopCommand != nullptr)
     m_teleopCommand->Schedule();
 }
@@ -39,7 +39,7 @@ void Robot::TeleopInit()
 
 void Robot::TeleopPeriodic() 
 {
-  
+
 }
 
 

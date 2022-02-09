@@ -8,7 +8,6 @@
 Drive::Drive(DriveTrain* subsystem) 
 {
   m_train = subsystem;
-  m_train = new DriveTrain();
   m_controller = new XboxController(XBOX_CONTROLLER_PORT);
 }
 

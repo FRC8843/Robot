@@ -21,7 +21,7 @@ class RobotContainer {
 
   //ExampleSubsystem  m_subsystem;
   //ExampleCommand  m_autonomousCommand;
-  DriveTrain m_driveSubsystem = DriveTrain();
+  DriveTrain m_driveSubsystem;
   Drive m_driveCommand;
 
 
