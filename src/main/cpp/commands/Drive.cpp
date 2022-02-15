@@ -6,19 +6,16 @@
 
 Drive::Drive(DriveTrain* subsystem) 
 {
-
-
-
   m_train = subsystem;
-  m_controller = new XboxController(XBOX_CONTROLLER_PORT);
+  m_controller = new XboxController(CONTROLLER_PORT);
 }
 
 
 
 void Drive::Initialize() 
 {
-  m_train->setRotationThreshold(FIRST_ROTATION_THRESHOLD);
-  m_train->setSpeedThreshold(FIRST_SPEED_THRESHOLD);
+  m_train->setRotationThreshold(ROTATION_THRESHOLD);
+  m_train->setSpeedThreshold(SPEED_THRESHOLD);
   m_train->setSpeed(0);
   m_train->setRotation(0);
 }
@@ -27,37 +24,23 @@ void Drive::Execute()
 {
 
   if (m_controller->GetAButtonReleased())
-    m_speedThreshold = FIRST_SPEED_THRESHOLD;
+    m_train->setSpeedThreshold(m_train->getSpeedThreshold() + SPEED_THRESHOLD);
+    
+  else if (m_controller->GetXButtonReleased())
+    m_train->setSpeedThreshold(m_train->getSpeedThreshold() - SPEED_THRESHOLD);
 
-  if (m_controller->GetXButtonReleased())
-    m_speedThreshold = SECOND_SPEED_THRESHOLD;
+  else if (m_controller->GetYButtonReleased())
+    m_train->setRotationThreshold(m_train->getRotationThreshold() + ROTATION_THRESHOLD);
+    
+  else if (m_controller->GetBButtonReleased())
+    m_train->setRotationThreshold(m_train->getRotationThreshold() - ROTATION_THRESHOLD);
 
-  if (m_controller->GetYButtonReleased())
-    m_speedThreshold = THIRD_SPEED_THRESHOLD;
 
-  if (m_controller->GetBButtonReleased())
-    m_speedThreshold = FOURTH_SPEED_THRESHOLD;
+  m_train->setSpeed(m_controller->GetRightTriggerAxis() - m_controller->GetLeftTriggerAxis());
+  m_train->setRotation(m_controller->GetRightX());
 
-  
-  if (m_controller->GetLeftY() == 1)
-    m_rotationThreshold = FIRST_ROTATION_THRESHOLD;
+  m_train->Drive(); 
 
-  if (m_controller->GetLeftX() == -1)
-    m_rotationThreshold = SECOND_ROTATION_THRESHOLD;
-
-  if (m_controller->GetLeftY() == -1)
-    m_rotationThreshold = THIRD_ROTATION_THRESHOLD;
-
-  if (m_controller->GetLeftX() == 1)
-    m_rotationThreshold = FOURTH_ROTATION_THRESHOLD;
-  
-
-    m_train->setRotationThreshold(m_rotationThreshold);
-    m_train->setSpeedThreshold(m_speedThreshold);
-    m_train->setSpeed(m_controller->GetRightTriggerAxis() - m_controller->GetLeftTriggerAxis());
-    m_train->setRotation(m_controller->GetRightX());
-
-    m_train->Drive(); 
 }
 
 

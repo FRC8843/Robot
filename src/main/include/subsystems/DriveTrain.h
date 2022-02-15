@@ -17,12 +17,17 @@ class DriveTrain : public frc2::SubsystemBase
 {
     public:
         DriveTrain();
+        ~DriveTrain();
         void Drive();
         void setSpeedThreshold(double);
         void setRotationThreshold(double);
         void setRotation(double);
         void setSpeed(double);
 
+        double getSpeedThreshold();
+        double getRotationThreshold();
+        double getRotation();
+        double getSpeed();
 
     private:
 

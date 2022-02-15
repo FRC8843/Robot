@@ -10,6 +10,8 @@
 #include <frc/XboxController.h>
 #include "Constants.h"
 
+#define ADD_DRIVING_THRESHOLDS
+
 using namespace frc;
 class Drive
     : public frc2::CommandHelper<frc2::CommandBase, Drive> {
@@ -25,8 +27,5 @@ class Drive
 
     DriveTrain* m_train;
     XboxController* m_controller;
-
-    double m_speedThreshold;
-    double m_rotationThreshold;
 
 };

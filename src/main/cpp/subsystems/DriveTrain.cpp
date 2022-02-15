@@ -1,6 +1,5 @@
 #include "subsystems/DriveTrain.h"
-#include <iostream>
-// my update
+
 DriveTrain::DriveTrain() 
 {   
    
@@ -11,6 +10,17 @@ DriveTrain::DriveTrain()
 
     m_drive = new DifferentialDrive(*m_leftLeadingMotor, *m_rightLeadingMotor);
 }
+
+DriveTrain::DriveTrain()
+
+{
+    delete m_leftLeadingMotor;
+    delete m_leftFollowingMotor;
+    delete m_rightLeadingMotor;
+    delete m_rightLeadingMotor;
+    delete m_drive;
+}
+
 
 void DriveTrain::setRotationThreshold(double rotationThreshold)
 {
@@ -31,6 +41,25 @@ void DriveTrain::setRotation(double rotation)
 {
     m_rotationThreshold = rotation;
 }
+
+
+double DriveTrain::getSpeed()
+{
+    return  m_speed;
+}
+double DriveTrain::getRotation()
+{
+    return m_rotation;
+}
+double DriveTrain::getRotationThreshold()
+{
+    return m_rotationThreshold;
+}
+double DriveTrain::getSpeedThreshold()
+{
+    return m_speedThreshold;
+}
+
 
 void DriveTrain::Drive() 
 {
