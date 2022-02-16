@@ -43,7 +43,7 @@ const double FOURTH_ROTATION_THRESHOLD = 1  ;//
 //                                           //
 ///////////////////////////////////////////////
 
-#ifdef ADD_DRIVING_THRESHOLDS
+
 
 #define SPEED_THRESHOLD 0.1
 #define ROTATION_THRESHOLD 0.1
@@ -51,4 +51,3 @@ const double FOURTH_ROTATION_THRESHOLD = 1  ;//
 #define MAX_ROTATION_THRESHOLD 1.0
 
 
-#endif

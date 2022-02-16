@@ -7,10 +7,9 @@
 #include <frc2/command/CommandBase.h>
 #include <frc2/command/CommandHelper.h>
 #include "subsystems/DriveTrain.h"
-#include <frc/XboxController.h>
 #include "Constants.h"
+#include <frc/XboxController.h>
 
-#define ADD_DRIVING_THRESHOLDS
 
 using namespace frc;
 class Drive
@@ -26,6 +25,7 @@ class Drive
   private:
 
     DriveTrain* m_train;
-    XboxController* m_controller;
+    //frc::XboxController* m_controller;
+    XboxController* m_controller; // la idiota
 
 };

@@ -1,5 +1,5 @@
 #include "subsystems/DriveTrain.h"
-
+#include "math.h"
 DriveTrain::DriveTrain() 
 {   
    
@@ -11,7 +11,7 @@ DriveTrain::DriveTrain()
     m_drive = new DifferentialDrive(*m_leftLeadingMotor, *m_rightLeadingMotor);
 }
 
-DriveTrain::DriveTrain()
+DriveTrain::~DriveTrain() // la idiota, distructor has to have ~ simbol, i make cmments cause ziv told me to
 
 {
     delete m_leftLeadingMotor;
@@ -63,11 +63,19 @@ double DriveTrain::getSpeedThreshold()
 
 void DriveTrain::Drive() 
 {
-    if (m_speed > m_speedThreshold)
-        setSpeed(m_speedThreshold);
+    if (m_speed > m_speedThreshold || m_speed < -m_speedThreshold)// ||  m_speed < -m_speedThreshold)
+        if(m_speed>0)
+            setSpeedThreshold(m_speedThreshold);
+        else
+            setSpeedThreshold(-m_speedThreshold);
 
-    if (m_rotation > m_rotationThreshold)
-        setRotation(m_rotationThreshold);
+    if (m_rotation > m_rotationThreshold || m_rotation < -m_rotationThreshold){
+        //std::cout << "1" << std::endl;
+        if(m_rotation>0)
+            setRotationThreshold(m_rotationThreshold);// * (m_rotation/std::abs(m_rotation)));
+        else
+            setRotationThreshold(-m_rotationThreshold);
+    }
 
     m_drive->ArcadeDrive(m_rotation, m_speed);
 }

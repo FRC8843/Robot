@@ -7,20 +7,24 @@
 #include <frc2/command/Command.h>
 #include "subsystems/DriveTrain.h"
 #include "commands/Drive.h"
-#include "subsystems/ExampleSubsystem.h"
-#include "commands/ExampleCommand.h"
+#include <frc/XboxController.h>
+
+using namespace frc;
+using namespace frc2;
 
 class RobotContainer {
  public:
   RobotContainer();
+ 
 
-  frc2::Command* GetAutonomousCommand();
-  frc2::Command* GetTeleopCommand();
-   
+  Command* GetAutonomousCommand();
+  Command* GetTeleopCommand();
+     
  private:
 
-  //ExampleSubsystem  m_subsystem;
-  //ExampleCommand  m_autonomousCommand;
+  XboxController* m_controller;
+
+
   DriveTrain* m_driveSubsystem;
   Drive* m_driveCommand;
 
