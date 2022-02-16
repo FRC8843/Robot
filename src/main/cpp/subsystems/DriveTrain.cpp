@@ -1,5 +1,6 @@
 #include "subsystems/DriveTrain.h"
 #include "math.h"
+
 DriveTrain::DriveTrain() 
 {   
    
@@ -11,8 +12,7 @@ DriveTrain::DriveTrain()
     m_drive = new DifferentialDrive(*m_leftLeadingMotor, *m_rightLeadingMotor);
 }
 
-DriveTrain::~DriveTrain() // la idiota, distructor has to have ~ simbol, i make cmments cause ziv told me to
-
+DriveTrain::~DriveTrain()
 {
     delete m_leftLeadingMotor;
     delete m_leftFollowingMotor;
@@ -29,7 +29,7 @@ void DriveTrain::setRotationThreshold(double rotationThreshold)
 
 void DriveTrain::setSpeedThreshold(double speedThreshold)
 {
-    m_rotationThreshold = speedThreshold;
+    m_speedThreshold = speedThreshold;
 }
 
 void DriveTrain::setSpeed(double speed)
@@ -39,44 +39,16 @@ void DriveTrain::setSpeed(double speed)
 
 void DriveTrain::setRotation(double rotation)
 {
-    m_rotationThreshold = rotation;
+    m_rotation = rotation;
 }
 
-
-double DriveTrain::getSpeed()
-{
-    return  m_speed;
+double map(double x, double in_min, double in_max, double out_min, double out_max) {
+  return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }
-double DriveTrain::getRotation()
-{
-    return m_rotation;
-}
-double DriveTrain::getRotationThreshold()
-{
-    return m_rotationThreshold;
-}
-double DriveTrain::getSpeedThreshold()
-{
-    return m_speedThreshold;
-}
-
-
 void DriveTrain::Drive() 
 {
-    if (m_speed > m_speedThreshold || m_speed < -m_speedThreshold)// ||  m_speed < -m_speedThreshold)
-        if(m_speed>0)
-            setSpeedThreshold(m_speedThreshold);
-        else
-            setSpeedThreshold(-m_speedThreshold);
-
-    if (m_rotation > m_rotationThreshold || m_rotation < -m_rotationThreshold){
-        //std::cout << "1" << std::endl;
-        if(m_rotation>0)
-            setRotationThreshold(m_rotationThreshold);// * (m_rotation/std::abs(m_rotation)));
-        else
-            setRotationThreshold(-m_rotationThreshold);
-    }
-
+    m_speed = map(m_speed, 0, 1.0, 0, m_speedThreshold);
+    m_rotation = map(m_rotation, 0, 1.0, 0, m_rotationThreshold);
     m_drive->ArcadeDrive(m_rotation, m_speed);
 }
 

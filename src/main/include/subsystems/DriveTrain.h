@@ -24,10 +24,6 @@ class DriveTrain : public frc2::SubsystemBase
         void setRotation(double);
         void setSpeed(double);
 
-        double getSpeedThreshold();
-        double getRotationThreshold();
-        double getRotation();
-        double getSpeed();
 
     private:
 
@@ -35,18 +31,17 @@ class DriveTrain : public frc2::SubsystemBase
         CANSparkMax* m_leftFollowingMotor;
         CANSparkMax* m_rightFollowingMotor;
         CANSparkMax* m_rightLeadingMotor;
+
         DifferentialDrive* m_drive;
 
         double m_speedThreshold;
         double m_rotationThreshold;
         double m_rotation;
         double m_speed;
-   
-
-
-        
+      
 };
 
+double map();
 
 //        DOCUMENTATION:
 //  

@@ -25,7 +25,5 @@ class Drive
   private:
 
     DriveTrain* m_train;
-    //frc::XboxController* m_controller;
-    XboxController* m_controller; // la idiota
-
+    XboxController* m_controller; 
 };
