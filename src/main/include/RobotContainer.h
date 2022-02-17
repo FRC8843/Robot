@@ -9,7 +9,7 @@
 #include "commands/Drive.h"
 #include <frc/XboxController.h>
 #include <frc2/command/button/JoystickButton.h>
-
+#include "commands/IncreaseSpeedThreshold.h"
 
 using namespace frc;
 using namespace frc2;

@@ -14,7 +14,7 @@ Drive::Drive(DriveTrain* subsystem)
 void Drive::Initialize() 
 {
   m_train->setRotationThreshold(0.5);
-  m_train->setSpeedThreshold(0.5);
+  m_train->setSpeedThreshold(0.1);
   m_train->setSpeed(0);
   m_train->setRotation(0);
 }

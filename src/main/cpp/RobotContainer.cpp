@@ -24,26 +24,23 @@ RobotContainer::RobotContainer()
 }
 
 void RobotContainer::ConfigureButtonBindings() {
-  // double speed_threshold = m_driveSubsystem ->getSpeedThreshold();
-  // double rotation_threshold = m_driveSubsystem->getRotationThreshold();
-  // buttonA->Debounce(100_ms).WhenPressed(
+  double speed_threshold = m_driveSubsystem ->getSpeedThreshold();
+  double rotation_threshold = m_driveSubsystem->getRotationThreshold();
+  buttonA->WhenPressed(new IncreaseSpeedThreshold(m_driveSubsystem));
+  
+  // buttonB->Debounce(100_ms).WhenActive(
   //   m_driveSubsystem->setSpeedThreshold(
-  //     rotation_threshold + 0.1;
+  //     rotation_threshold - 0.1
   //   )
   //   );
-  // buttonB->Debounce(100_ms).WhenPressed(
-  //   m_driveSubsystem->setSpeedThreshold(
-  //     rotation_threshold - 0.1;
-  //   )
-  //   );
-  // buttonX->Debounce(100_ms).WhenPressed(
+  // buttonX->Debounce(100_ms).WhenActive(
   // m_driveSubsystem->setSpeedThreshold(
-  //   speed_threshold + 0.1;
+  //   speed_threshold + 0.1
   // )
   // );
-  // buttonY->Debounce(100_ms).WhenPressed(
+  // buttonY->Debounce(100_ms).WhenActive(
   // m_driveSubsystem->setSpeedThreshold(
-  //   speed_threshold - 0.1;
+  //   speed_threshold - 0.1
   // )
   // );
 }
