@@ -25,3 +25,7 @@
 ///////////////////////////////////////////////
 
 
+#define BUTTON_A_NUMBER 0
+#define BUTTON_B_NUMBER 1
+#define BUTTON_X_NUMBER 2
+#define BUTTON_Y_NUMBER 3

@@ -23,7 +23,6 @@ void Drive::Execute()
 {
     m_train->setSpeed(m_controller->GetRightTriggerAxis() - m_controller->GetLeftTriggerAxis());
     m_train->setRotation(m_controller->GetRightX());
-
     m_train->Drive(); 
 }
 

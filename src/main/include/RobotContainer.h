@@ -8,6 +8,8 @@
 #include "subsystems/DriveTrain.h"
 #include "commands/Drive.h"
 #include <frc/XboxController.h>
+#include <frc2/command/button/JoystickButton.h>
+
 
 using namespace frc;
 using namespace frc2;
@@ -28,6 +30,10 @@ class RobotContainer {
   DriveTrain* m_driveSubsystem;
   Drive* m_driveCommand;
 
-
+  JoystickButton* buttonA;
+  JoystickButton* buttonB;
+  JoystickButton* buttonX;
+  JoystickButton* buttonY;
+  
   void ConfigureButtonBindings();
 };

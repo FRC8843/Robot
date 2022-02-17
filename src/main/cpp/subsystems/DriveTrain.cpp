@@ -26,20 +26,37 @@ void DriveTrain::setRotationThreshold(double rotationThreshold)
 {
     m_rotationThreshold = rotationThreshold;
 }
-
 void DriveTrain::setSpeedThreshold(double speedThreshold)
 {
     m_speedThreshold = speedThreshold;
 }
-
 void DriveTrain::setSpeed(double speed)
 {
     m_speed = speed;
 }
-
 void DriveTrain::setRotation(double rotation)
 {
     m_rotation = rotation;
+}
+
+double DriveTrain::getRotationThreshold()
+{
+    return m_rotation;
+}
+
+double DriveTrain::getSpeedThreshold()
+{
+    return m_speedThreshold;
+}
+
+double DriveTrain::getSpeed()
+{
+    return m_speed;
+}
+
+double DriveTrain::getRotation()
+{
+    return m_rotation;
 }
 
 double map(double x, double in_min, double in_max, double out_min, double out_max) {
