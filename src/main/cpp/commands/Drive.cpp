@@ -13,8 +13,8 @@ Drive::Drive(DriveTrain* subsystem)
 
 void Drive::Initialize() 
 {
-  m_train->setRotationThreshold(0.5);
-  m_train->setSpeedThreshold(0.1);
+  m_train->setRotationThreshold(0.8);
+  m_train->setSpeedThreshold(0.8);
   m_train->setSpeed(0);
   m_train->setRotation(0);
 }
@@ -22,7 +22,7 @@ void Drive::Initialize()
 void Drive::Execute() 
 {
     m_train->setSpeed(m_controller->GetRightTriggerAxis() - m_controller->GetLeftTriggerAxis());
-    m_train->setRotation(m_controller->GetRightX());
+    m_train->setRotation(-m_controller->GetRightX());
     m_train->Drive(); 
 }
 

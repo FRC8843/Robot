@@ -3,10 +3,12 @@
 // the WPILib BSD license file in the root directory of this project.
 
 #include "commands/IncreaseSpeedThreshold.h"
+#include <iostream>
 
 IncreaseSpeedThreshold::IncreaseSpeedThreshold(DriveTrain* driveTrain) 
-{ 
-  AddRequirements(driveTrain);
+{
+  std::cout << "mazafaka" << std::endl; 
+  //AddRequirements(driveTrain);
   double speedThreshold = driveTrain->getSpeedThreshold();
   driveTrain->setSpeedThreshold(speedThreshold + THRESHOLD_CHANGE);
 }

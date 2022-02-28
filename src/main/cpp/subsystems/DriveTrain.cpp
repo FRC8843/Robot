@@ -9,6 +9,9 @@ DriveTrain::DriveTrain()
     m_rightFollowingMotor = new CANSparkMax(RIGHT_FOLLOWING_MOTOR_ID, CANSparkMax::MotorType::kBrushed);
     m_rightLeadingMotor = new CANSparkMax(RIGHT_LEADING_MOTOR_ID, CANSparkMax::MotorType::kBrushed);
 
+    m_rightFollowingMotor->Follow(*m_rightLeadingMotor);
+    m_leftFollowingMotor->Follow(*m_leftLeadingMotor);
+
     m_drive = new DifferentialDrive(*m_leftLeadingMotor, *m_rightLeadingMotor);
 }
 
