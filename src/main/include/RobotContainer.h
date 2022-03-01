@@ -4,36 +4,45 @@
 
 #pragma once
 
-#include <frc2/command/Command.h>
+#include "Constants.h"
+
 #include "subsystems/DriveTrain.h"
+#include "subsystems/RobotMap.h"
+
 #include "commands/Drive.h"
+#include "commands/StartAutoDrive.h"
+#include "commands/UpdateMap.h"
+
 #include <frc/XboxController.h>
 #include <frc2/command/button/JoystickButton.h>
-#include "commands/IncreaseSpeedThreshold.h"
 
-using namespace frc;
 using namespace frc2;
-
-class RobotContainer {
+class RobotContainer 
+{
  public:
   RobotContainer();
- 
 
-  Command* GetAutonomousCommand();
-  Command* GetTeleopCommand();
-     
+  Command* getUpdateMapCommand();
+  Command* getStartAutoDriveCommand();
+  Command* getTeleopDriveCommand();
+   
  private:
 
-  XboxController* m_controller;
+//controllers 
+  XboxController* controller;
+//
 
+//subsystems
+  DriveTrain* driveTrain;
+  RobotMap* robotMap;
+//
 
-  DriveTrain* m_driveSubsystem;
-  Drive* m_driveCommand;
-
-  JoystickButton* buttonA;
-  JoystickButton* buttonB;
-  JoystickButton* buttonX;
-  JoystickButton* buttonY;
+//commands
   
+  Drive* teleopDriveCommand;
+  StartAutoDrive* startAutoDriveCommand;
+  UpdateMap* updateMapCommand;
+//
+
   void ConfigureButtonBindings();
 };

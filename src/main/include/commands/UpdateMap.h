@@ -6,26 +6,18 @@
 
 #include <frc2/command/CommandBase.h>
 #include <frc2/command/CommandHelper.h>
-#include <frc/Timer.h>
-#include "subsystems/DriveTrain.h"
 #include "subsystems/RobotMap.h"
 
-class StartAutoDrive
-    : public frc2::CommandHelper<frc2::CommandBase, StartAutoDrive> {
- public:
-  StartAutoDrive(DriveTrain* driveTrain);
 
-  void Initialize() override;
+class UpdateMap
+    : public frc2::CommandHelper<frc2::CommandBase, UpdateMap> {
+ public:
+  UpdateMap(RobotMap* map);
 
   void Execute() override;
 
-  void End(bool interrupted) override;
-
   bool IsFinished() override;
-
- private:
-
-  DriveTrain* driveTrain;
-  frc::Timer timer;
+private:
+  RobotMap* robotMap;
 
 };

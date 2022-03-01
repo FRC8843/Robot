@@ -22,8 +22,8 @@ class Robot : public frc::TimedRobot {
 
  private:
 
-  frc2::Command* m_autonomousCommand = nullptr;
-  frc2::Command* m_teleopCommand = nullptr;
+  RobotContainer container;
+  frc2::Command* autonomousCommand;
+  frc2::Command* teleopCommand;
   
-  RobotContainer m_container;
 };

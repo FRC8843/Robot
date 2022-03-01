@@ -7,10 +7,9 @@
 
 IncreaseSpeedThreshold::IncreaseSpeedThreshold(DriveTrain* driveTrain) 
 {
-  std::cout << "mazafaka" << std::endl; 
-  //AddRequirements(driveTrain);
+
   double speedThreshold = driveTrain->getSpeedThreshold();
-  driveTrain->setSpeedThreshold(speedThreshold + THRESHOLD_CHANGE);
+  driveTrain->setSpeedThreshold(speedThreshold);
 }
 
 bool IncreaseSpeedThreshold::IsFinished() {

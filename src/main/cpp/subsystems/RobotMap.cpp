@@ -32,7 +32,7 @@ double RobotMap::getSpeedX()
 }
 double RobotMap::getSpeedY()
 {
-    currentSpeedY += getFilteredAcceleration(accelerometer.GetY()) * DEFAULT_LOOP_TIME;
+    currentSpeedY += getFilteredAcceleration(accelerometer.GetY()) * DEFAULT_LOOP_TIME;     //Rule: v = v0 + a * t
     return currentSpeedY; 
 }
 double RobotMap::getSpeedZ()
@@ -41,15 +41,19 @@ double RobotMap::getSpeedZ()
     return currentSpeedZ;
 }
 
-Point RobotMap::getLocation()
+void RobotMap::update()
 {
     double x = this->location.x;
     double y = this->location.y;
     double z = this->location.z;
     
-    x += getSpeedX() * DEFAULT_LOOP_TIME;
-    y += getSpeedY() * DEFAULT_LOOP_TIME;
+    x += getSpeedX() * DEFAULT_LOOP_TIME; 
+    y += getSpeedY() * DEFAULT_LOOP_TIME;   //Rule : x = x0 + v * t
     z += getSpeedZ() * DEFAULT_LOOP_TIME;
 
-    return {x, y, z};
+    this->location = {x, y, z};
+}   
+Point RobotMap::getLocation()
+{
+    return this->location;
 }

@@ -4,8 +4,13 @@
 #include <frc2/command/CommandScheduler.h>
 #include <cameraserver/CameraServer.h>
 
-void Robot::RobotInit() {
+void Robot::RobotInit() 
+{
   frc::CameraServer::StartAutomaticCapture();
+  container.getUpdateMapCommand()->Schedule();
+
+  teleopCommand = container.getTeleopDriveCommand();
+  autonomousCommand = container.getStartAutoDriveCommand();
 } 
 
 
@@ -19,29 +24,24 @@ void Robot::DisabledInit() {}
 void Robot::DisabledPeriodic() {}
 
 
-void Robot::AutonomousInit() {
-  m_autonomousCommand = m_container.GetAutonomousCommand();
-
-  if (m_autonomousCommand != nullptr) {
-    m_autonomousCommand->Schedule();
-  }
+void Robot::AutonomousInit()
+{
+  if (autonomousCommand != nullptr)
+    autonomousCommand->Schedule();
 }
 
 void Robot::AutonomousPeriodic() {}
 
 void Robot::TeleopInit() 
 {
-  m_teleopCommand = m_container.GetTeleopCommand();
-  if(m_teleopCommand != nullptr)
-    m_teleopCommand->Schedule();
+ 
+  if(teleopCommand != nullptr)
+    teleopCommand->Schedule();
 }
 
 
 
-void Robot::TeleopPeriodic() 
-{
-
-}
+void Robot::TeleopPeriodic() {}
 
 
 void Robot::TestPeriodic() 

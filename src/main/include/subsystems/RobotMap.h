@@ -22,10 +22,18 @@ class RobotMap : public frc2::SubsystemBase
   RobotMap();
 
   void setStartLocation(Point& location);
+  void update();
 
   double getSpeedX();
   double getSpeedY();
   double getSpeedZ();
+
+
+//for testing
+  double getAccelerationX(); 
+  double getAccelerationY(); 
+  double getAccelerationZ();
+//
 
   Point getLocation();
   
