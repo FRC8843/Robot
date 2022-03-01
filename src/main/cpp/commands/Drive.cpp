@@ -6,6 +6,7 @@
 
 Drive::Drive(DriveTrain* subsystem) 
 {
+  AddRequirements(subsystem);
   m_train = subsystem;
   m_controller = new XboxController(CONTROLLER_PORT);
 }

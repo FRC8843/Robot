@@ -31,3 +31,5 @@
 #define BUTTON_Y_NUMBER 4
 
 #define THRESHOLD_CHANGE 0.1
+
+#define DEFAULT_LOOP_TIME 0.2

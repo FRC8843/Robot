@@ -27,12 +27,8 @@ class RobotMap : public frc2::SubsystemBase
   double getSpeedY();
   double getSpeedZ();
 
-
   Point getLocation();
   
-
-
-
  private:
 
   double getFilteredAcceleration(double acceleration);
