@@ -9,8 +9,7 @@
 #include "subsystems/RobotMap.h"
 
 
-class UpdateMap
-    : public frc2::CommandHelper<frc2::CommandBase, UpdateMap> {
+class UpdateMap : public frc2::CommandHelper<frc2::CommandBase, UpdateMap> {
  public:
   UpdateMap(RobotMap* map);
 

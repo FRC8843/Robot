@@ -4,28 +4,14 @@
 
 #pragma once
 
-///////////////////////////////////////////////
-//             Spark Max ID's                //
-//                                           //
-#define LEFT_LEADING_MOTOR_ID 11             //
-#define LEFT_FOLLOWING_MOTOR_ID 12           //
-#define RIGHT_LEADING_MOTOR_ID 21            //
-#define RIGHT_FOLLOWING_MOTOR_ID 22          //
-#define ELEVATOR_MOTOR_ID 1                  //
-//                                           //
-//                                           //
-///////////////////////////////////////////////
+#define LEFT_LEADING_MOTOR_ID 11             
+#define LEFT_FOLLOWING_MOTOR_ID 12           
+#define RIGHT_LEADING_MOTOR_ID 21            
+#define RIGHT_FOLLOWING_MOTOR_ID 22          
+#define ELEVATOR_MOTOR_ID 1                  
 
 
-///////////////////////////////////////////////
-//            Robot Controllers              //
-//                                           //
-#define CONTROLLER_PORT 0                    //
-//                                           //
-//                                           //
-///////////////////////////////////////////////
-
-
+#define CONTROLLER_PORT 0               
 
 
 #define SPEED_THRESHOLD 0.1
@@ -35,3 +21,8 @@
 
 
 #define DEFAULT_LOOP_TIME 0.2
+
+#define BUTTON_A_NUMBER 1
+#define BUTTON_B_NUMBER 2
+#define BUTTON_X_NUMBER 3
+#define BUTTON_Y_NUMBER 4

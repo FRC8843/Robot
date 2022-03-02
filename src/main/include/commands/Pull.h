@@ -15,8 +15,7 @@
  * directly; this is crucially important, or else the decorator functions in
  * Command will *not* work!
  */
-class Pull
-    : public frc2::CommandHelper<frc2::CommandBase, Pull> {
+class Pull : public frc2::CommandHelper<frc2::CommandBase, Pull> {
  public:
   Pull(Elevator* elevator);
 
@@ -27,4 +26,7 @@ class Pull
   void End(bool interrupted) override;
 
   bool IsFinished() override;
+
+  private:
+  Elevator* elevator;
 };

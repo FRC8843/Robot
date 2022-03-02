@@ -15,10 +15,9 @@
  * directly; this is crucially important, or else the decorator functions in
  * Command will *not* work!
  */
-class Push
-    : public frc2::CommandHelper<frc2::CommandBase, Push> {
+class Push : public frc2::CommandHelper<frc2::CommandBase, Push> {
  public:
-  Push();
+  Push(Elevator* elevator);
 
   void Initialize() override;
 
@@ -27,4 +26,7 @@ class Push
   void End(bool interrupted) override;
 
   bool IsFinished() override;
+
+ private:
+  Elevator* elevator;
 };

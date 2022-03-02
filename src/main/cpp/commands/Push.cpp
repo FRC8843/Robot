@@ -4,20 +4,29 @@
 
 #include "commands/Push.h"
 
-Push::Push() {
-  // Use addRequirements() here to declare subsystem dependencies.
+Push::Push(Elevator* elevator)
+{
+  AddRequirements(elevator);
+  this->elevator = elevator;
 }
 
-// Called when the command is initially scheduled.
-void Push::Initialize() {}
 
-// Called repeatedly when this Command is scheduled to run
-void Push::Execute() {}
+void Push::Initialize()
+{
 
-// Called once the command ends or is interrupted.
-void Push::End(bool interrupted) {}
+}
 
-// Returns true when the command should end.
+
+void Push::Execute()
+{
+  this->elevator->setMotor(-0.8);
+}
+
+void Push::End(bool interrupted)
+{
+  this->elevator->setMotor(0);
+}
+
 bool Push::IsFinished() {
   return false;
 }

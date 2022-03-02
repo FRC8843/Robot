@@ -15,14 +15,15 @@ RobotContainer::RobotContainer()
   this->teleopDriveCommand = new Drive(driveTrain);
   this->updateMapCommand = new UpdateMap(robotMap);
 
-  
+  buttonA = new JoystickButton(controller, BUTTON_A_NUMBER);
+  buttonB = new JoystickButton(controller, BUTTON_B_NUMBER);
+  buttonX = new JoystickButton(controller, BUTTON_X_NUMBER);
+  buttonY = new JoystickButton(controller, BUTTON_Y_NUMBER);
+
   ConfigureButtonBindings();
 }
 
-void RobotContainer::ConfigureButtonBindings() {
-  //frc2::JoystickButton button = new frc2::JoystickButton(m_controller, 0);
 
-}
 Command* RobotContainer::getUpdateMapCommand(){
   return this->updateMapCommand;
 }
@@ -32,4 +33,11 @@ Command* RobotContainer::getStartAutoDriveCommand(){
 }
 Command* RobotContainer::getTeleopDriveCommand(){
   return this->teleopDriveCommand;
+}
+
+void RobotContainer::ConfigureButtonBindings() 
+{
+  buttonA->WhileHeld(pullCommand);
+  buttonB->WhileHeld(pushCommand);
+  
 }

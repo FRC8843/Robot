@@ -9,8 +9,7 @@
 #include "subsystems/DriveTrain.h"
 #include "Constants.h"
 
-class IncreaseSpeedThreshold
-    : public frc2::CommandHelper<frc2::CommandBase, IncreaseSpeedThreshold> {
+class IncreaseSpeedThreshold : public frc2::CommandHelper<frc2::CommandBase, IncreaseSpeedThreshold> {
  public:
   IncreaseSpeedThreshold(DriveTrain* driveTrain);
 

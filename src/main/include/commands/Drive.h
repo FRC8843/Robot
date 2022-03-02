@@ -12,8 +12,7 @@
 
 
 using namespace frc;
-class Drive
-    : public frc2::CommandHelper<frc2::CommandBase, Drive> {
+class Drive : public frc2::CommandHelper<frc2::CommandBase, Drive> {
  public:
 
     Drive(DriveTrain* driveSubsystem);

@@ -4,20 +4,29 @@
 
 #include "commands/Pull.h"
 
-Pull::Pull() {
-  // Use addRequirements() here to declare subsystem dependencies.
+Pull::Pull(Elevator* elevator) 
+{
+  this->elevator = elevator;
+  AddRequirements(elevator);
 }
 
-// Called when the command is initially scheduled.
-void Pull::Initialize() {}
+void Pull::Initialize()
+{
+  
+}
 
-// Called repeatedly when this Command is scheduled to run
-void Pull::Execute() {}
 
-// Called once the command ends or is interrupted.
-void Pull::End(bool interrupted) {}
+void Pull::Execute() 
+{
+  this->elevator->setMotor(0.8);
+}
 
-// Returns true when the command should end.
-bool Pull::IsFinished() {
+void Pull::End(bool interrupted)
+{
+  this->elevator->setMotor(0);
+}
+
+bool Pull::IsFinished() 
+{
   return false;
 }

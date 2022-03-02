@@ -10,8 +10,7 @@
 #include "subsystems/DriveTrain.h"
 #include "subsystems/RobotMap.h"
 
-class StartAutoDrive
-    : public frc2::CommandHelper<frc2::CommandBase, StartAutoDrive> {
+class StartAutoDrive : public frc2::CommandHelper<frc2::CommandBase, StartAutoDrive> {
  public:
   StartAutoDrive(DriveTrain* driveTrain);
 
