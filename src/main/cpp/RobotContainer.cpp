@@ -14,6 +14,7 @@ RobotContainer::RobotContainer()
   this->startAutoDriveCommand = new StartAutoDrive(driveTrain);
   this->teleopDriveCommand = new Drive(driveTrain);
   this->updateMapCommand = new UpdateMap(robotMap);
+  this->printLocation = new PrintLocation(robotMap);
 
   buttonA = new JoystickButton(controller, BUTTON_A_NUMBER);
   buttonB = new JoystickButton(controller, BUTTON_B_NUMBER);
@@ -34,10 +35,13 @@ Command* RobotContainer::getStartAutoDriveCommand(){
 Command* RobotContainer::getTeleopDriveCommand(){
   return this->teleopDriveCommand;
 }
-
+Command* RobotContainer::getPrintLocationCommand()
+{
+  return this->printLocation;
+}
 void RobotContainer::ConfigureButtonBindings() 
 {
   buttonA->WhileHeld(pullCommand);
   buttonB->WhileHeld(pushCommand);
-  
+
 }

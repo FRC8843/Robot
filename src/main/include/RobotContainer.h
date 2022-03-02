@@ -15,6 +15,7 @@
 #include "commands/UpdateMap.h"
 #include "commands/Pull.h"
 #include "commands/Push.h"
+#include "commands/PrintLocation.h"
 
 #include <frc/XboxController.h>
 #include <frc2/command/button/JoystickButton.h>
@@ -28,7 +29,8 @@ class RobotContainer
   Command* getUpdateMapCommand();
   Command* getStartAutoDriveCommand();
   Command* getTeleopDriveCommand();
-   
+  Command* getPrintLocationCommand();
+  
  private:
 
 //controllers 
@@ -47,6 +49,7 @@ class RobotContainer
   UpdateMap* updateMapCommand;
   Pull* pullCommand;
   Push* pushCommand;
+  PrintLocation* printLocation;
 //
 
 //buttons
