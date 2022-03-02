@@ -11,6 +11,7 @@
 #define LEFT_FOLLOWING_MOTOR_ID 12           //
 #define RIGHT_LEADING_MOTOR_ID 21            //
 #define RIGHT_FOLLOWING_MOTOR_ID 22          //
+#define ELEVATOR_MOTOR_ID 1                  //
 //                                           //
 //                                           //
 ///////////////////////////////////////////////
