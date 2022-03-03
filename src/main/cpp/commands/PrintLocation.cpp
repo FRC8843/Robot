@@ -10,12 +10,6 @@ PrintLocation::PrintLocation(RobotMap* robotMap)
 }
 
 
-void PrintLocation::Initialize() 
-{
-
-}
-
-
 void PrintLocation::Execute() 
 {
   double x = map->getLocation().x;
@@ -26,9 +20,3 @@ void PrintLocation::Execute()
 }
 
 
-void PrintLocation::End(bool interrupted) {}
-
-
-bool PrintLocation::IsFinished() {
-  return false;
-}
