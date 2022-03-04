@@ -6,13 +6,17 @@
 
 #include <frc2/command/CommandBase.h>
 #include <frc2/command/CommandHelper.h>
-#include "subsystems/DriveTrain.h"
-#include "Constants.h"
+#include <iostream>
 
-class IncreaseSpeedThreshold : public frc2::CommandHelper<frc2::CommandBase, IncreaseSpeedThreshold> {
+class TestPrint : public frc2::CommandHelper<frc2::CommandBase, TestPrint> {
  public:
-  IncreaseSpeedThreshold(DriveTrain* driveTrain);
+  TestPrint();
+
+  void Initialize() override;
+
+  void Execute() override;
+
+  void End(bool interrupted) override;
 
   bool IsFinished() override;
-
 };

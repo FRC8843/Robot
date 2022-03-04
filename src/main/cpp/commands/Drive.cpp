@@ -21,12 +21,9 @@ void Drive::Initialize()
 
 void Drive::Execute() 
 {
-
   m_train->setSpeed( m_controller->GetLeftTriggerAxis() - m_controller->GetRightTriggerAxis());
   m_train->setRotation(m_controller->GetRightX());
 
   m_train->Drive(); 
-
 }
-
 
