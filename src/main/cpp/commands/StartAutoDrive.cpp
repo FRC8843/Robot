@@ -10,8 +10,8 @@ StartAutoDrive::StartAutoDrive(DriveTrain* driveTrain) {
 
 void StartAutoDrive::Initialize() 
 {
-  driveTrain->setRotationThreshold(0.8);
-  driveTrain->setSpeedThreshold(0.8);
+  driveTrain->setRotationThreshold(MAX_ROTATION_THRESHOLD);
+  driveTrain->setSpeedThreshold(MAX_SPEED_THRESHOLD);
   driveTrain->setSpeed(0);
   driveTrain->setRotation(0);
   timer.Start();

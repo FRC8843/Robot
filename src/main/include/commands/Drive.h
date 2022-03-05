@@ -15,7 +15,7 @@ using namespace frc;
 class Drive : public frc2::CommandHelper<frc2::CommandBase, Drive> {
  public:
 
-    Drive(DriveTrain* driveSubsystem);
+    Drive(DriveTrain* driveSubsystem, XboxController* driveController);
 
     void Initialize() override;
 
@@ -23,6 +23,6 @@ class Drive : public frc2::CommandHelper<frc2::CommandBase, Drive> {
 
   private:
 
-    DriveTrain* m_train;
-    XboxController* m_controller; 
+    DriveTrain* driveTrain;
+    XboxController* driveController; 
 };

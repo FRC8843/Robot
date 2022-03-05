@@ -13,13 +13,12 @@ Push::Push(Elevator* elevator)
 
 void Push::Initialize()
 {
-
 }
 
 
 void Push::Execute()
 {
-  this->elevator->setMotor(-0.8);
+  this->elevator->setMotor(-ELEVATOR_MOTOR_ROTATION_PERCENTAGE);
 }
 
 void Push::End(bool interrupted)

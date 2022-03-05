@@ -2,28 +2,28 @@
 #include "commands/Drive.h"
 #include <iostream>
 
-Drive::Drive(DriveTrain* subsystem) 
+Drive::Drive(DriveTrain* driveSubsystem, XboxController* driveController) 
 {
-  m_train = subsystem;
-  m_controller = new XboxController(CONTROLLER_PORT);
+  this->driveTrain = driveSubsystem;
+  this->driveController = driveController; 
 }
 
 
 
 void Drive::Initialize() 
 {
-  AddRequirements(m_train);
-  m_train->setRotationThreshold(0.8);
-  m_train->setSpeedThreshold(0.8);
-  m_train->setSpeed(0);
-  m_train->setRotation(0);
+  AddRequirements(driveSubsystem);
+  driveTrain->setRotationThreshold(MAX_SPEED_THRESHOLD);
+  driveTrain->setSpeedThreshold(MAX_ROTATION_THRESHOLD);
+  driveTrain->setSpeed(0);
+  driveTrain->setRotation(0);
 }
 
 void Drive::Execute() 
 {
-  m_train->setSpeed( m_controller->GetLeftTriggerAxis() - m_controller->GetRightTriggerAxis());
-  m_train->setRotation(m_controller->GetRightX());
+ driveTrain->setSpeed(driveController->GetLeftTriggerAxis() -driveController->GetRightTriggerAxis());
+ driveTrain->setRotation(driveController->GetRightX());
 
-  m_train->Drive(); 
+ driveTrain->Drive(); 
 }
 
