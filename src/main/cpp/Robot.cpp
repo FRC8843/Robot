@@ -1,4 +1,4 @@
-//niggaaaaaaaaaaaaaaaaz in my balls
+
 #include "Robot.h"
 #include <frc/smartdashboard/SmartDashboard.h>
 #include <frc2/command/CommandScheduler.h>
@@ -7,10 +7,10 @@
 void Robot::RobotInit() 
 {
   frc::CameraServer::StartAutomaticCapture();
-  container.getUpdateMapCommand()->Schedule();
+  //container.getUpdateMapCommand()->Schedule();
   
   //for test:
-  container.getPrintLocationCommand()->Schedule();
+  // container.getPrintLocationCommand()->Schedule();
 
   teleopCommand = container.getTeleopDriveCommand();
   autonomousCommand = container.getStartAutoDriveCommand();

@@ -17,10 +17,10 @@ RobotContainer::RobotContainer()
   this->updateMapCommand = new UpdateMap(robotMap);
   this->printLocation = new PrintLocation(robotMap);
 
-  buttonA = new JoystickButton(controller, BUTTON_A_NUMBER);
-  buttonB = new JoystickButton(controller, BUTTON_B_NUMBER);
-  buttonX = new JoystickButton(controller, BUTTON_X_NUMBER);
-  buttonY = new JoystickButton(controller, BUTTON_Y_NUMBER);
+  buttonA = new JoystickButton(controller, XboxController::Button::kA);
+  buttonB = new JoystickButton(controller, XboxController::Button::kB);
+  buttonX = new JoystickButton(controller, XboxController::Button::kX);
+  buttonY = new JoystickButton(controller, XboxController::Button::kY);
 
   ConfigureButtonBindings();
 }
@@ -42,7 +42,7 @@ Command* RobotContainer::getPrintLocationCommand()
 }
 void RobotContainer::ConfigureButtonBindings() 
 {
-  buttonA->WhileHeld(pullCommand);
-  buttonB->WhileHeld(pushCommand);
+  buttonA->WhileHeld(pullCommand());
+  buttonB->WhileHeld(pushCommand());
 
 }
