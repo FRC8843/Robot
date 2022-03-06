@@ -13,8 +13,11 @@ RobotContainer::RobotContainer()
   this->printLocation = new PrintLocation(robotMap);
 
   this->elevator = new Elevator();
-  this->pullCommand = new Pull(elevator);
-  this->pushCommand = new Push(elevator);
+
+  this->loadCommand = new Load(elevator);
+  this->unloadCommand = new Unload(elevator);
+  this->throwCommand = new Throw(elevator);
+
   buttonA = new JoystickButton(controller, XboxController::Button::kA);
   buttonB = new JoystickButton(controller, XboxController::Button::kB);
   buttonX = new JoystickButton(controller, XboxController::Button::kX);
@@ -43,7 +46,7 @@ void RobotContainer::ConfigureButtonBindings()
 
 
 {
-  buttonA->WhileHeld(pullCommand);
-  buttonB->WhileHeld(pushCommand);
-  buttonX->WhileHeld(printLocation);
+  buttonA->WhileHeld(loadCommand);
+  buttonB->WhileHeld(unloadCommand);
+  buttonX->WhileHeld(throwCommand);
 }

@@ -2,30 +2,31 @@
 // Open Source Software; you can modify and/or share it under the terms of
 // the WPILib BSD license file in the root directory of this project.
 
-#include "commands/Push.h"
+#include "commands/Load.h"
 
-Push::Push(Elevator* elevator)
+Load::Load(Elevator* elevator) 
 {
-  AddRequirements(elevator);
   this->elevator = elevator;
+  AddRequirements(elevator);
 }
 
-
-void Push::Initialize()
+void Load::Initialize()
 {
+  
 }
 
 
-void Push::Execute()
+void Load::Execute() 
 {
-  this->elevator->setMotor(-ELEVATOR_MOTOR_ROTATION_PERCENTAGE);
+  this->elevator->setMotor(ELEVATOR_LOAD_SPEED);
 }
 
-void Push::End(bool interrupted)
+void Load::End(bool interrupted)
 {
   this->elevator->setMotor(0);
 }
 
-bool Push::IsFinished() {
+bool Load::IsFinished() 
+{
   return false;
 }

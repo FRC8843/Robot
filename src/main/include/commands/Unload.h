@@ -15,9 +15,9 @@
  * directly; this is crucially important, or else the decorator functions in
  * Command will *not* work!
  */
-class Push : public frc2::CommandHelper<frc2::CommandBase, Push> {
+class Unload : public frc2::CommandHelper<frc2::CommandBase, Unload> {
  public:
-  Push(Elevator* elevator);
+  Unload(Elevator* elevator);
 
   void Initialize() override;
 

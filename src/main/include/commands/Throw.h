@@ -9,10 +9,10 @@
 #include "subsystems/Elevator.h"
 #include "Constants.h"
 
-class Pull
-    : public frc2::CommandHelper<frc2::CommandBase, Pull> {
+class Throw
+    : public frc2::CommandHelper<frc2::CommandBase, Throw> {
  public:
-  Pull(Elevator* elevator);
+  Throw(Elevator* elevator);
 
   void Initialize() override;
 
@@ -22,6 +22,6 @@ class Pull
 
   bool IsFinished() override;
 
-  private:
-    Elevator* elevator;
+ private:
+  Elevator* elevator;
 };

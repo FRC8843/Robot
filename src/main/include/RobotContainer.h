@@ -13,8 +13,9 @@
 #include "commands/Drive.h"
 #include "commands/StartAutoDrive.h"
 #include "commands/UpdateMap.h"
-#include "commands/Pull.h"
-#include "commands/Push.h"
+#include "commands/Load.h"
+#include "commands/Unload.h"
+#include "commands/Throw.h"
 #include "commands/PrintLocation.h"
 
 #include <frc/XboxController.h>
@@ -47,8 +48,10 @@ class RobotContainer
   Drive* teleopDriveCommand;
   StartAutoDrive* startAutoDriveCommand;
   UpdateMap* updateMapCommand;
-  Pull* pullCommand;
-  Push* pushCommand;
+  Load* loadCommand;
+  Unload* unloadCommand;
+  Throw* throwCommand;
+  
   PrintLocation* printLocation;
 //
 

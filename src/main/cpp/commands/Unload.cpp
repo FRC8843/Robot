@@ -2,31 +2,30 @@
 // Open Source Software; you can modify and/or share it under the terms of
 // the WPILib BSD license file in the root directory of this project.
 
-#include "commands/Pull.h"
+#include "commands/Unload.h"
 
-Pull::Pull(Elevator* elevator) 
+Unload::Unload(Elevator* elevator)
 {
-  this->elevator = elevator;
   AddRequirements(elevator);
+  this->elevator = elevator;
 }
 
-void Pull::Initialize()
+
+void Unload::Initialize()
 {
-  
 }
 
 
-void Pull::Execute() 
+void Unload::Execute()
 {
-  this->elevator->setMotor(ELEVATOR_MOTOR_ROTATION_PERCENTAGE);
+  this->elevator->setMotor(-ELEVATOR_UNLOAD_SPEED);
 }
 
-void Pull::End(bool interrupted)
+void Unload::End(bool interrupted)
 {
   this->elevator->setMotor(0);
 }
 
-bool Pull::IsFinished() 
-{
+bool Unload::IsFinished() {
   return false;
 }
