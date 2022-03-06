@@ -32,7 +32,7 @@ m_rotationThreshold = rotationThreshold;
 
 void DriveTrain::setSpeedThreshold(double speedThreshold)
 {
-m_rotationThreshold = speedThreshold;
+m_speedThreshold = speedThreshold;
 }
 
 void DriveTrain::setSpeed(double speed)
@@ -42,7 +42,7 @@ m_speed = speed;
 
 void DriveTrain::setRotation(double rotation)
 {
-m_rotationThreshold = rotation;
+m_rotation = rotation;
 }
 
 

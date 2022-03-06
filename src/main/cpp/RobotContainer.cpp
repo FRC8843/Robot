@@ -39,4 +39,5 @@ void RobotContainer::ConfigureButtonBindings()
 {
   buttonA->WhileHeld(pullCommand);
   buttonB->WhileHeld(pushCommand);
+  buttonX->WhileHeld(printLocation);
 }
