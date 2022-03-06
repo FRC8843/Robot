@@ -1,4 +1,3 @@
-
 #include "RobotContainer.h"
 
 RobotContainer::RobotContainer()
@@ -38,7 +37,6 @@ Command* RobotContainer::getPrintLocationCommand()
 }
 void RobotContainer::ConfigureButtonBindings() 
 {
-  buttonA->WhileHeld(pullCommand());
-  buttonB->WhileHeld(pushCommand());
-
+  buttonA->WhileHeld(pullCommand);
+  buttonB->WhileHeld(pushCommand);
 }

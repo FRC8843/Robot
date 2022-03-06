@@ -10,7 +10,7 @@ void Robot::RobotInit()
   //container.getUpdateMapCommand()->Schedule();
   
   //for test:
-  // container.getPrintLocationCommand()->Schedule();
+  //container.getPrintLocationCommand()->Schedule();
 
   teleopCommand = container.getTeleopDriveCommand();
   autonomousCommand = container.getStartAutoDriveCommand();

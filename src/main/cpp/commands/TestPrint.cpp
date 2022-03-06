@@ -13,7 +13,10 @@ void TestPrint::Initialize()
   std::cout << "print command invoked" << std::endl;
 }
 
-void TestPrint::Execute() {}
+void TestPrint::Execute() 
+{
+  
+}
 
 
 void TestPrint::End(bool interrupted) {}

@@ -12,7 +12,7 @@ Drive::Drive(DriveTrain* driveSubsystem, XboxController* driveController)
 
 void Drive::Initialize() 
 {
-  AddRequirements(driveSubsystem);
+  AddRequirements(driveTrain);
   driveTrain->setRotationThreshold(MAX_SPEED_THRESHOLD);
   driveTrain->setSpeedThreshold(MAX_ROTATION_THRESHOLD);
   driveTrain->setSpeed(0);
