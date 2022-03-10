@@ -71,9 +71,15 @@ void DriveTrain::Drive()
 {
     if (m_speed > m_speedThreshold)
         setSpeed(m_speedThreshold);
+    else if(m_speed < -m_speedThreshold)
+        setSpeed(-m_speedThreshold);
 
     if (m_rotation > m_rotationThreshold)
         setRotation(m_rotationThreshold);
+    else if(m_rotation < -m_rotationThreshold)
+        setRotation(-m_rotationThreshold);
+    // m_speed *= m_speedThreshold;
+    // m_rotation *= m_rotationThreshold;
 
     m_drive->ArcadeDrive(m_rotation, m_speed);
 }

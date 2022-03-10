@@ -43,8 +43,6 @@ Command* RobotContainer::getPrintLocationCommand()
   return this->printLocation;
 }
 void RobotContainer::ConfigureButtonBindings() 
-
-
 {
   buttonA->WhileHeld(loadCommand);
   buttonB->WhileHeld(unloadCommand);

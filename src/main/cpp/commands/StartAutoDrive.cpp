@@ -1,4 +1,3 @@
-
 #include "commands/StartAutoDrive.h"
 
 StartAutoDrive::StartAutoDrive(DriveTrain* driveTrain) {
@@ -20,7 +19,7 @@ void StartAutoDrive::Initialize()
 
 void StartAutoDrive::Execute() 
 {
-  driveTrain->setSpeed(0.3);
+  driveTrain->setSpeed(ROBOT_AUTO_DRIVING_SPEED);
   driveTrain->Drive();
 }
 
@@ -28,10 +27,12 @@ void StartAutoDrive::Execute()
 void StartAutoDrive::End(bool interrupted) 
 {
   timer.Reset();
+  // driveTrain->setSpeed(0);
+  // driveTrain->Drive();
 }
 
 
 bool StartAutoDrive::IsFinished()
  {  
-  return timer.HasElapsed((units::time::second_t)(1)); // Questionable ??
+  return timer.HasElapsed((units::time::second_t)ROBOT_AUTO_DRIVING_TIME); 
  }
