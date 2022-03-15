@@ -5,12 +5,9 @@ RobotContainer::RobotContainer()
   this->controller = new XboxController(CONTROLLER_PORT);
 
   this->driveTrain = new DriveTrain();
-  this->robotMap = new RobotMap();
   
   this->startAutoDriveCommand = new StartAutoDrive(driveTrain);
   this->teleopDriveCommand = new Drive(driveTrain, controller);
-  this->updateMapCommand = new UpdateMap(robotMap);
-  this->printLocation = new PrintLocation(robotMap);
 
   this->elevator = new Elevator();
 
@@ -28,9 +25,7 @@ RobotContainer::RobotContainer()
 }
 
 
-Command* RobotContainer::getUpdateMapCommand(){
-  return this->updateMapCommand;
-}
+
 
 Command* RobotContainer::getStartAutoDriveCommand(){
   return this->startAutoDriveCommand;
@@ -38,10 +33,7 @@ Command* RobotContainer::getStartAutoDriveCommand(){
 Command* RobotContainer::getTeleopDriveCommand(){
   return this->teleopDriveCommand;
 }
-Command* RobotContainer::getPrintLocationCommand()
-{
-  return this->printLocation;
-}
+
 void RobotContainer::ConfigureButtonBindings() 
 {
   buttonA->WhileHeld(loadCommand);

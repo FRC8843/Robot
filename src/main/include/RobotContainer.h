@@ -7,16 +7,13 @@
 #include "Constants.h"
 
 #include "subsystems/DriveTrain.h"
-#include "subsystems/RobotMap.h"
 #include "subsystems/Elevator.h"
 
 #include "commands/Drive.h"
 #include "commands/StartAutoDrive.h"
-#include "commands/UpdateMap.h"
 #include "commands/Load.h"
 #include "commands/Unload.h"
 #include "commands/Throw.h"
-#include "commands/PrintLocation.h"
 
 #include <frc/XboxController.h>
 #include <frc2/command/button/JoystickButton.h>
@@ -30,7 +27,6 @@ class RobotContainer
   Command* getUpdateMapCommand();
   Command* getStartAutoDriveCommand();
   Command* getTeleopDriveCommand();
-  Command* getPrintLocationCommand();
   
  private:
 
@@ -40,19 +36,16 @@ class RobotContainer
 
 //subsystems
   DriveTrain* driveTrain;
-  RobotMap* robotMap;
   Elevator* elevator;
 //
 
 //commands
   Drive* teleopDriveCommand;
   StartAutoDrive* startAutoDriveCommand;
-  UpdateMap* updateMapCommand;
   Load* loadCommand;
   Unload* unloadCommand;
   Throw* throwCommand;
-  
-  PrintLocation* printLocation;
+
 //
 
 //buttons
