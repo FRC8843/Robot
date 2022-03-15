@@ -7,7 +7,7 @@ RobotContainer::RobotContainer()
   this->driveTrain = new DriveTrain();
   
   this->startAutoDriveCommand = new StartAutoDrive(driveTrain);
-  this->teleopDriveCommand = new Drive(driveTrain, controller);
+  //this->teleopDriveCommand = new Drive(driveTrain, controller);
 
   this->elevator = new Elevator();
 
