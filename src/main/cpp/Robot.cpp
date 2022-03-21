@@ -42,14 +42,9 @@ void Robot::TeleopPeriodic()
 {
 
 }
-
-
-#include <frc/Ultrasonic.h>
-#include <iostream>
-frc::Ultrasonic dSensor = frc::Ultrasonic(3,4);
 void Robot::TestPeriodic() 
 {
-std::cout << (float)dSensor.GetRange() << std::endl;
+  
 }
 
 #ifndef RUNNING_FRC_TESTS
