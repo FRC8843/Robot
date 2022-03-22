@@ -13,7 +13,7 @@ class driveForward : public frc2::CommandHelper<frc2::CommandBase, driveForward>
 
  public:
 
-  driveForward(DriveTrain* driveTrain, Warden* warden, CommandHelper nextCommand);
+  driveForward(DriveTrain* driveTrain, int time);
 
   void Initialize() override;
 
@@ -27,7 +27,7 @@ class driveForward : public frc2::CommandHelper<frc2::CommandBase, driveForward>
 private:
 
   DriveTrain* driveTrain;
-  Warden* warden;
-  CommandHelper* nextCommand;
+  Timer timer;
+  int time;
 
 };

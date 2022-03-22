@@ -4,8 +4,37 @@
 
 #include "commands/AutoDrive.h"
 
+AutoDrive::AutoDrive(DriveTrain* driveTrain, Elevator* elevator, Warden* warden) {
+  this->driveTrain = driveTrain;
+  this->elevator = elevator;
+  this->warden = warden;
+}
 
-AutoDrive::AutoDrive() {
-AddCommands();
 
+void AutoDrive::Initialize() {
+
+  frc2::SequentialCommandGroup(
+    driveBack(driveBack, warden),
+    Throw(Elevator),
+    frc2::ParallelRaceGroup(
+      driveForward(driveTrain, nullptr, 3);
+      Load(elevator)
+    )
+    driveBack(driveBack, warden),
+    Throw(Elevator)
+    driveForward(driveTrain, warden, 5)
+  );
+
+
+}
+
+
+void AutoDrive::Execute() {}
+
+
+void AutoDrive::End(bool interrupted) {}
+
+
+bool AutoDrive::IsFinished() {
+  return false;
 }

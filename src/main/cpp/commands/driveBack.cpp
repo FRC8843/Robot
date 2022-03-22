@@ -4,20 +4,25 @@
 
 #include "commands/driveBack.h"
 
-driveBack::driveBack() {
-  // Use addRequirements() here to declare subsystem dependencies.
+driveBack::driveBack(DriveTrain* driveTrain, Warden* warden) {
+  
 }
 
-// Called when the command is initially scheduled.
-void driveBack::Initialize() {}
+void driveBack::Initialize() {
+  driveTrain->setDefault();
+}
 
-// Called repeatedly when this Command is scheduled to run
-void driveBack::Execute() {}
 
-// Called once the command ends or is interrupted.
-void driveBack::End(bool interrupted) {}
+void driveBack::Execute() {
+  driveTrain->setSpeed(0.5);
+}
 
-// Returns true when the command should end.
+
+void driveBack::End(bool interrupted) {
+  
+}
+
+
 bool driveBack::IsFinished() {
-  return false;
+  return warden->isNear(IMPACT_DISTANCE);
 }

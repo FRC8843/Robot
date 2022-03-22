@@ -4,31 +4,32 @@
 
 #include "commands/driveForward.h"
 
-driveForward::driveForward(DriveTrain* driveTrain, Warden* warden, CommandHelper nextCommand) {
+driveForward::driveForward(DriveTrain* driveTrain, Warden* warden, int time) {
   this->driveTrain = driveTrain;
+  this->timer = frc::Timer();
+  this->time = time;
   this->warden = warden;
-  this->nextCommand = nextCommand;
 }
 
 
 void driveForward::Initialize() {
-  driveTrain->setRotationThreshold(0);
-  driveTrain->setRotation(0);
-  driveTrain->setSpeed(0.1);
-  driveTrain->setSpeedThreshold(0.7);
+  driveTrain->setDefault();
+  timer.Start();
 }
 
 
 void driveForward::Execute() {
-  driveTrain->setSpeed(0.6);
+  driveTrain->setSpeed(-0.5);
 }
 
 
 void driveForward::End(bool interrupted) {
-  nextCommand->Schedule();
+
 }
 
 
 bool driveForward::IsFinished() {
-  return warden->isNear(IMPACT_DISTANCE);
+  if (warden != nullptr)
+    return warden->isNear(IMPACT_DISTANCE);
+  return timer.HasElapsed((units::time::second_t)time);
 }

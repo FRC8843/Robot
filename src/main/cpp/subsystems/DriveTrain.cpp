@@ -66,6 +66,12 @@ double DriveTrain::getSpeedThreshold()
 return m_speedThreshold;
 }
 
+void DriveTrain::setDefault(){
+  driveTrain->setRotationThreshold(MAX_ROTATION_THRESHOLD);
+  driveTrain->setSpeedThreshold(MAX_SPEED_THRESHOLD);
+  driveTrain->setSpeed(0);
+  driveTrain->setRotation(0);
+}
 
 void DriveTrain::Drive() 
 {

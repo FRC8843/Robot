@@ -17,7 +17,7 @@
 class driveBack
     : public frc2::CommandHelper<frc2::CommandBase, driveBack> {
  public:
-  driveBack();
+  driveBack(DriveTrain* driveTrain, Warden* warden);
 
   void Initialize() override;
 
@@ -26,4 +26,10 @@ class driveBack
   void End(bool interrupted) override;
 
   bool IsFinished() override;
+
+private:
+
+  DriveTrain* driveTrain;
+  Warden* warden;
+  CommandHelper* nextCommand;
 };

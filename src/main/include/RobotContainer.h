@@ -17,6 +17,8 @@
 #include "commands/Throw.h"
 #include "commands/CarefulDrive.h"
 #include "commands/Rotate.h"
+#include "commands/AutoDrive.h"
+
 
 #include <frc/XboxController.h>
 #include <frc2/command/button/JoystickButton.h>
@@ -28,7 +30,7 @@ class RobotContainer
   RobotContainer();
 
   Command* getUpdateMapCommand();
-  Command* getStartAutoDriveCommand();
+  Command* getAutoDriveCommand();
   Command* getTeleopDriveCommand();
   
  private:
@@ -51,6 +53,7 @@ class RobotContainer
   Throw* throwCommand;
   CarefulDrive* carfulDriveCommand;
   Rotate* rotateCommand;
+  AutoDrive* autoDriveCommand;
 //
 
 //buttons

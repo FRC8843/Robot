@@ -1,21 +1,34 @@
-// Copyright (c) FIRST and other WPILib contributors.
-// Open Source Software; you can modify and/or share it under the terms of
-// the WPILib BSD license file in the root directory of this project.
 
 #pragma once
 
+#include <frc2/command/CommandBase.h>
 #include <frc2/command/CommandHelper.h>
-#include <frc2/command/ParallelCommandGroup.h>
-#include <commands/Load.h>
-#include <commands/Throw.h>
-#include <commands/CarefulDrive.h>
+
+#include <subsystems/Elevator.h>
+#include <subsystems/Warden.h>
 #include <subsystems/DriveTrain.h>
 
+#include <commands/driveBack.h>
+#include <commands/driveForward.h>
+#include <commands/Load.h>
+#include <commands/Throw.h>
 
 
-class AutoDrive : public frc2::CommandHelper<frc2::ParallelCommandGroup, AutoDrive> {
+class AutoDrive : public frc2::CommandHelper<frc2::CommandBase, AutoDrive> {
  public:
+  AutoDrive(DriveTrain* driveTrain, Elevator* elevator, Warden* warden);
 
-  AutoDrive();
+  void Initialize() override;
 
+  void Execute() override;
+
+  void End(bool interrupted) override;
+
+  bool IsFinished() override;
+
+  private:
+
+  DriveTrain* driveTrain;
+  Elevator* elevator;
+  Warden* warden;
 };
