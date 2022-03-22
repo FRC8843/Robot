@@ -25,6 +25,7 @@ void RobotContainer::ConfigureButtonBindings()
   buttonA->WhileHeld(loadCommand);
   buttonB->WhileHeld(unloadCommand);
   buttonX->WhileHeld(throwCommand);
+  buttonY->WhenPressed(rotateCommand);
 }
 void RobotContainer::initButtons(){
 
@@ -54,5 +55,5 @@ void RobotContainer::initCommands(){
   this->unloadCommand = new Unload(elevator);
   this->throwCommand = new Throw(elevator);
   this->carfulDriveCommand = new CarefulDrive(driveTrain, warden);
-
+  this->rotateCommand = new Rotate(driveTrain, TELEOP_ROTATION_ANGLE);
 }

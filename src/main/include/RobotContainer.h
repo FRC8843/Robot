@@ -16,7 +16,7 @@
 #include "commands/Unload.h"
 #include "commands/Throw.h"
 #include "commands/CarefulDrive.h"
-
+#include "commands/Rotate.h"
 
 #include <frc/XboxController.h>
 #include <frc2/command/button/JoystickButton.h>
@@ -50,6 +50,7 @@ class RobotContainer
   Unload* unloadCommand;
   Throw* throwCommand;
   CarefulDrive* carfulDriveCommand;
+  Rotate* rotateCommand;
 //
 
 //buttons

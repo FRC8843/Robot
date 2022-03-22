@@ -7,7 +7,7 @@
 Warden::Warden() {
     backSensor = new frc::Ultrasonic(BACK_ULTRASONIC_PINOUT);
     frontSensor = new frc::Ultrasonic(FRONT_ULTRASONIC_PINOUT);
-
+    
     backSensor->SetAutomaticMode(true);
     frontSensor->SetAutomaticMode(true);
 }
