@@ -16,6 +16,7 @@ class Warden : public frc2::SubsystemBase {
   void Periodic() override;
   double getFrontDistance();
   double getBackDistance();
+  bool isNear(double distance);
 
  private:
   frc::Ultrasonic* frontSensor;

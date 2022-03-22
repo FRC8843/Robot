@@ -6,14 +6,18 @@
 
 #include <frc2/command/CommandBase.h>
 #include <frc2/command/CommandHelper.h>
-#include "subsystems/Elevator.h"
-#include "Constants.h"
-#include <frc/Timer.h>
 
-class Throw
-    : public frc2::CommandHelper<frc2::CommandBase, Throw> {
+/**
+ * An example command.
+ *
+ * <p>Note that this extends CommandHelper, rather extending CommandBase
+ * directly; this is crucially important, or else the decorator functions in
+ * Command will *not* work!
+ */
+class driveBack
+    : public frc2::CommandHelper<frc2::CommandBase, driveBack> {
  public:
-  Throw(Elevator* elevator);
+  driveBack();
 
   void Initialize() override;
 
@@ -22,8 +26,4 @@ class Throw
   void End(bool interrupted) override;
 
   bool IsFinished() override;
-
- private:
-  Elevator* elevator;
-  frc::Timer timer;
 };

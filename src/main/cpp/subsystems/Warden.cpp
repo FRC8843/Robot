@@ -7,7 +7,7 @@
 Warden::Warden() {
     backSensor = new frc::Ultrasonic(BACK_ULTRASONIC_PINOUT);
     frontSensor = new frc::Ultrasonic(FRONT_ULTRASONIC_PINOUT);
-    
+
     backSensor->SetAutomaticMode(true);
     frontSensor->SetAutomaticMode(true);
 }
@@ -18,5 +18,8 @@ double Warden::getFrontDistance(){
     return (double)backSensor->GetRange() - ULTRASONIC_MEASURE_OFFSET - FRONT_ULTRASONIC_OFFSET;
 }
 
-
+bool Warden::isNear(double distance){
+      return getBackDistance() <= distance ||
+             getFrontDistance() <= distance;
+}
 void Warden::Periodic() {}

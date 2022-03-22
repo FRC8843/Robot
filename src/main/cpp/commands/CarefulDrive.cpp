@@ -19,8 +19,7 @@ void CarefulDrive::Initialize() {
 
 
 void CarefulDrive::Execute() {
-  if (warden->getBackDistance() <= IMPACT_DISTANCE ||  
-    warden->getFrontDistance() <= IMPACT_DISTANCE)
+  if (warden->isNear(IMPACT_DISTANCE))
     direction *= -1;
 
   train->setSpeed(direction * ROBOT_AUTO_DRIVING_SPEED);
