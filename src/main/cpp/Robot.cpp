@@ -8,7 +8,7 @@ void Robot::RobotInit()
 {
   frc::CameraServer::StartAutomaticCapture();
   teleopCommand = container.getTeleopDriveCommand();
-  autonomousCommand = container.getStartAutoDriveCommand();
+  autonomousCommand = container.getAutoDriveCommand();
 } 
 
 
@@ -42,11 +42,9 @@ void Robot::TeleopPeriodic()
 {
 
 }
-
-
 void Robot::TestPeriodic() 
 {
-
+  
 }
 
 #ifndef RUNNING_FRC_TESTS

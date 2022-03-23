@@ -7,11 +7,14 @@
 #include <frc2/command/CommandBase.h>
 #include <frc2/command/CommandHelper.h>
 #include <subsystems/DriveTrain.h>
+#include <subsystems/Warden.h>
+#include <Constants.h>
 
-class PrintSpeed
-    : public frc2::CommandHelper<frc2::CommandBase, PrintSpeed> {
+class DriveForward : public frc2::CommandHelper<frc2::CommandBase, DriveForward> {
+
  public:
-  PrintSpeed(DriveTrain* driveTrain);
+
+  DriveForward(DriveTrain* driveTrain, Warden* warden, int time);
 
   void Initialize() override;
 
@@ -21,6 +24,12 @@ class PrintSpeed
 
   bool IsFinished() override;
 
- private:
-   DriveTrain* driveTrain;
+
+private:
+
+  DriveTrain* driveTrain;
+  Timer timer;
+  Warden* warden;
+  int time;
+
 };

@@ -6,11 +6,13 @@
 
 Throw::Throw(Elevator* elevator) {
   this->elevator = elevator;
+  timer = frc::Timer();
 }
 
 
 void Throw::Initialize() {
   this->elevator->setMotor(0);
+  timer.Start();
 }
 
 
@@ -25,5 +27,5 @@ void Throw::End(bool interrupted) {
 
 
 bool Throw::IsFinished() {
-  return false;
+  return timer.HasElapsed((units::time::second_t)2);
 }

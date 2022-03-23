@@ -8,12 +8,17 @@
 
 #include "subsystems/DriveTrain.h"
 #include "subsystems/Elevator.h"
+#include "subsystems/Warden.h"
 
 #include "commands/Drive.h"
 #include "commands/StartAutoDrive.h"
 #include "commands/Load.h"
 #include "commands/Unload.h"
 #include "commands/Throw.h"
+#include "commands/CarefulDrive.h"
+#include "commands/Rotate.h"
+#include "commands/AutoDrive.h"
+
 
 #include <frc/XboxController.h>
 #include <frc2/command/button/JoystickButton.h>
@@ -25,7 +30,7 @@ class RobotContainer
   RobotContainer();
 
   Command* getUpdateMapCommand();
-  Command* getStartAutoDriveCommand();
+  Command* getAutoDriveCommand();
   Command* getTeleopDriveCommand();
   
  private:
@@ -37,6 +42,7 @@ class RobotContainer
 //subsystems
   DriveTrain* driveTrain;
   Elevator* elevator;
+  Warden* warden;
 //
 
 //commands
@@ -45,7 +51,9 @@ class RobotContainer
   Load* loadCommand;
   Unload* unloadCommand;
   Throw* throwCommand;
-
+  CarefulDrive* carfulDriveCommand;
+  Rotate* rotateCommand;
+  AutoDrive* autoDriveCommand;
 //
 
 //buttons
@@ -56,4 +64,8 @@ JoystickButton* buttonY;
 //
 
   void ConfigureButtonBindings();
+  void initSubsystems();
+  void initCommands();
+  void initButtons();
+  void initControllers();
 };

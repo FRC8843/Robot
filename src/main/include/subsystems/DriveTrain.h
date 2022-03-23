@@ -25,6 +25,8 @@ class DriveTrain : public frc2::SubsystemBase
         void setRotation(double);
         void setSpeed(double);
 
+        void setDefault();
+
         double getSpeed();
         double getSpeedThreshold();
         double getRotationThreshold();

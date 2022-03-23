@@ -6,14 +6,12 @@
 
 #include <frc2/command/CommandBase.h>
 #include <frc2/command/CommandHelper.h>
-#include "subsystems/Elevator.h"
-#include "Constants.h"
-#include <frc/Timer.h>
+#include <subsystems/DriveTrain.h>
+#include <subsystems/Warden.h>
 
-class Throw
-    : public frc2::CommandHelper<frc2::CommandBase, Throw> {
+class CarefulDrive : public frc2::CommandHelper<frc2::CommandBase, CarefulDrive> {
  public:
-  Throw(Elevator* elevator);
+  CarefulDrive(DriveTrain* driveTrain, Warden* warden);
 
   void Initialize() override;
 
@@ -22,8 +20,12 @@ class Throw
   void End(bool interrupted) override;
 
   bool IsFinished() override;
-
+  
  private:
-  Elevator* elevator;
-  frc::Timer timer;
+  
+  Warden* warden;
+  DriveTrain* train;
+  int direction = -1;
+
+
 };
