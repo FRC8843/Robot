@@ -20,7 +20,7 @@ AutoDrive::AutoDrive(DriveTrain* driveTrain, Elevator* elevator, Warden* warden)
     raceGroup,
     DriveBack(driveTrain, warden),
     Throw(elevator),
-    DriveForward(driveTrain, warden, 5)
+    DriveForward(driveTrain, nullptr, 5)
   );
 
 
