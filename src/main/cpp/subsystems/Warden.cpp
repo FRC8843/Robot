@@ -19,7 +19,7 @@ double Warden::getFrontDistance(){
 }
 
 bool Warden::isNear(double distance){
-      return getBackDistance() <= distance ||
-             getFrontDistance() <= distance;
+       return getBackDistance() <= distance; // ||
+    //          getFrontDistance() <= distance;
 }
 void Warden::Periodic() {}

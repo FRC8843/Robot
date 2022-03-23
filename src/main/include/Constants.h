@@ -28,8 +28,8 @@
 #define ROBOT_AUTO_DRIVING_TIME 3
 #define ROBOT_AUTO_DRIVING_SPEED 0.70
 
-#define FRONT_ULTRASONIC_PINOUT 9,8 //trig, echo
-#define BACK_ULTRASONIC_PINOUT 7,6
+#define FRONT_ULTRASONIC_PINOUT 1,6 //trig, echo
+#define BACK_ULTRASONIC_PINOUT 9, 7
 #define ULTRASONIC_MEASURE_OFFSET 2 //centimeters
 #define FRONT_ULTRASONIC_OFFSET 20  // <- measurment needed 
 #define BACK_ULTRASONIC_OFFSET 20 // <- measurment needed
